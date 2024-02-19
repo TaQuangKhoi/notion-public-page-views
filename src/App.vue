@@ -1,20 +1,33 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+
+let url = document.location.ancestorOrigins[0];
+
+console.debug("document.location: ", document.location);
+
+console.debug("window.location: ", window.location);
+
+// get user device info
+console.debug("navigator.userAgent: ", navigator.userAgent);
+
+
+// loop through all the iframes
+// document.location.ancestorOrigins.forEach(function (item, index) {
+//   // if the iframe is not the first one
+//   if (index > 0) {
+//     // add the url to the url variable
+//     url += ' > ' + item;
+//   }
+// });
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <p>
+    {{ url }}
+  </p>
 </template>
 
 <style scoped>
